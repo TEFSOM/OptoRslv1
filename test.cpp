@@ -18,9 +18,7 @@ public:
 
 string POS::toStr(int d){	//文字列化
 	ostringstream oss;
-	//int X=x*1000,Y=y*1000;
 	int X=x*1000000,Y=y*1000000;
-	//oss << x << "," << y << "," << endl;
 	oss << "X" << X << "Y" << Y << "D0" << d << "*" << endl;
 	return oss.str();
 }
@@ -100,8 +98,6 @@ int main(int argc, char *argv[]){
 	for(int j=0;j<2*enc.l;j+=2){
 		for(int i=0;i<enc.num;i++){
 			double rr=enc.r+0.5*j*enc.w;
-			//double rp=rr+0.25*enc.w*(1+enc.k*sin(enc.pp*i*TPI/enc.num))-0.5*enc.dw;	//半径
-			//double rm=rr-0.25*enc.w*(1+enc.k*sin(enc.pp*i*TPI/enc.num))+0.5*enc.dw;	//半径
 			double rp=rr+(+0.25*enc.w-enc.dw)*(1+enc.k*sin(enc.pp*i*TPI/enc.num))+0.5*enc.dw;	//半径
 			double rm=rr+(-0.25*enc.w+enc.dw)*(1+enc.k*sin(enc.pp*i*TPI/enc.num))-0.5*enc.dw;	//半径
 			double th=i*TPI/enc.num;	//角度
